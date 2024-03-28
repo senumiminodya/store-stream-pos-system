@@ -63,7 +63,7 @@
     padding: 30px;
 }
 .login_logo {
-    background-image: url("assets/sign_up/signup_simbol.png");
+    background-image: url("assets/login/login_simbol.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -95,4 +95,13 @@
 }
 .text-field1 {
     background-color: #D9D9D9;
+}
+.small-image {
+    background-image: url("assets/login/small_img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+    margin: auto;
 }
