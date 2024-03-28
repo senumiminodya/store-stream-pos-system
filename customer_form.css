@@ -1,0 +1,96 @@
+.nav {
+    background-color: #FBF6EE;
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    height: 8vh; /* Example height, adjust as needed */
+}
+
+.logo {
+    background-image: url("assets/header/pos_logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: 10px;
+    height: 85px;
+    width: 157px;
+}
+
+.nav p {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #65B741;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+}
+
+.nav a {
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 10px;
+    padding: 10px;
+    border-left-style: none;
+}
+.nav-center {
+    align-items: center;  /*Vertical centering*/
+}
+
+.customers {
+    margin-left: 10px;
+}
+
+.icon {
+    color: black;
+    margin: 5px;
+}
+
+.nav-end {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    height: 8vh; /* Example height, adjust as needed */
+}
+
+.section {
+    position: absolute;
+    background-color: aqua;
+    height: 80vh;
+    width: 90vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.customer-logo {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 10px;
+}
+
+.content {
+    position: absolute;
+    background-color: #FBF6EE;
+    width: 90vw;
+    height: 70vh;
+}
+.custom-card {
+    position: absolute;
+    width: 40vw;
+    height: 20vh;
+    box-shadow: #D9D9D9 0px 5px 25px 1px;
+    margin: 30px;
+}
+.custom-card-header {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 10px;
+}
