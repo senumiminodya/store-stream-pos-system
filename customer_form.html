@@ -37,7 +37,40 @@
             </div>
         </div>
         <div class="card-right-side">
-            <button type="submit" class="new-customer-btn">New Customer</button>
+            <button type="submit" class="new-customer-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">New Customer</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Customer</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="formGroupExampleInput" class="form-label">Customer Id</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formGroupExampleInput2" class="form-label">NIC</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="National Identity Card Number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="formGroupExampleInput3" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Customer Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="formGroupExampleInput4" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="formGroupExampleInput4" placeholder="Customer Phone Number">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="view-all-customer-btn">View All Customers</button>
         </div>
         <div>
