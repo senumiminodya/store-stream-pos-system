@@ -176,3 +176,25 @@
 .buttons {
     margin-left: 20px;
 }
+
+@media (max-width: 576px) {
+    .custom-card {
+        width: 100%;
+    }
+
+    .card-right-side {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    #searched-items {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

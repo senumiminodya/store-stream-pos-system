@@ -176,3 +176,77 @@
 .buttons {
     margin-left: 20px;
 }
+
+@media all and (max-width: 768px) {
+    .nav p {
+        font-size: 18px;
+    }
+    .nav a {
+        font-size: 16px;
+    }
+    .section {
+        width: 95vw;
+    }
+    .custom-card {
+        width: 80vw;
+    }
+    .card-right-side {
+        right: 5vw;
+    }
+    #searched-customers {
+        width: 95vw;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .buttons {
+        margin-left: 10px;
+    }
+}
+
+@media all and (max-width: 576px) {
+    .nav p {
+        font-size: 16px;
+    }
+    .nav a {
+        font-size: 14px;
+    }
+    .logo {
+        width: 120px;
+        height: 65px;
+    }
+    .section {
+        width: 100vw;
+    }
+    .custom-card {
+        width: 90vw;
+    }
+    .card-right-side {
+        right: 2vw;
+    }
+    #searched-customers {
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .buttons {
+        margin-left: 5px;
+    }
+    .new-customer-btn {
+        margin: 30px;
+        background-color: #207DFF;
+        width: 170px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .view-all-customer-btn {
+        margin: 30px;
+        background-color: #F9FD50;
+        width: 170px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}

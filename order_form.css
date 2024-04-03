@@ -165,3 +165,33 @@
     top: 665px;
     left: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .content1 {
+        flex-direction: column;
+    }
+
+    .custom-card1, .custom-card2, .custom-card3 {
+        width: 100%;
+    }
+
+    .content2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 20px;
+    }
+
+    .buttons {
+        top: auto;
+        left: auto;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-card1, .custom-card2, .custom-card3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
