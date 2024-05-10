@@ -48,7 +48,7 @@
     position: absolute;
 }
 .image {
-    background-image: url("assets/sign_up/image.png");
+    background-image: url("large_img.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -62,8 +62,8 @@
 .form {
     padding: 30px;
 }
-.signup_logo {
-    background-image: url("assets/sign_up/signup_simbol.png");
+.login_logo {
+    background-image: url("login_simbol.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -72,17 +72,17 @@
     margin: 0 auto;
     margin-bottom: 30px;
 }
-.signup_logo, .signup {
+.login_logo, .signup {
     display: inline-block;
     margin: 0;
 }
-.signup {
+.login {
     margin: 0;
     padding: 0;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.sign_up_topic {
+.log_in_topic {
     display: flex;
     justify-content: center; /* Horizontal centering */
     align-items: center; /* Vertical centering */
@@ -95,4 +95,13 @@
 }
 .text-field1 {
     background-color: #D9D9D9;
+}
+.small-image {
+    background-image: url("small_img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+    margin: auto;
 }
