@@ -22,6 +22,95 @@ $(document).ready(function () {
         });
     }
 
+    // Function to validate customer fields
+    function validateCustomerFields() {
+        var isValid = true;
+        $('.error').remove(); // Clear any previous error messages
+
+        if ($('#cus_id').val().trim() === '') {
+            $('#cus_id').after('<span class="error text-danger" >Customer ID is required</span>');
+            isValid = false;
+        } else if (!/^(C-\d{3})$/.test($('#cus_id').val().trim())) {
+            $('#cus_id').after('<span class="error text-danger">Customer ID format is invalid. Expected format: C-001</span>');
+            isValid = false;
+        }
+
+        if ($('#cus_nic').val().trim() === '') {
+            $('#cus_nic').after('<span class="error text-danger">NIC is required</span>');
+            isValid = false;
+        } else if (!/^\d{9}[Vv]$|^\d{12}$/.test($('#cus_nic').val().trim())) { // Example NIC validation
+            $('#cus_nic').after('<span class="error text-danger">NIC format is invalid</span>');
+            isValid = false;
+        }
+
+        if ($('#cus_name').val().trim() === '') {
+            $('#cus_name').after('<span class="error text-danger">Name is required</span>');
+            isValid = false;
+        }
+
+        if ($('#cus_phoneNo').val().trim() === '') {
+            $('#cus_phoneNo').after('<span class="error text-danger">Phone Number is required</span>');
+            isValid = false;
+        } else if (!/^\d{10}$/.test($('#cus_phoneNo').val().trim())) { // Example phone number validation
+            $('#cus_phoneNo').after('<span class="error text-danger">Phone Number format is invalid</span>');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+    // Function to generate the next customer ID in the format C-001
+    function generateNextCustomerId() {
+        if (customers.length === 0) {
+            return 'C-001';
+        }
+        const lastCustomerId = customers[customers.length - 1].c_id;
+        const nextIdNumber = parseInt(lastCustomerId.split('-')[1]) + 1;
+        return `C-${nextIdNumber.toString().padStart(3, '0')}`;
+    }
+
+    // Real-time validation functions for each input field
+    function validateCustomerId() {
+        $('.error-id').remove(); // Clear previous error messages
+        if ($('#cus_id').val().trim() === '') {
+            $('#cus_id').after('<span class="error text-danger error-id">Customer ID is required</span>');
+        } else if (!/^(C-\d{3})$/.test(cus_id)) {
+            $('#cus_id').after('<span class="error text-danger error-id">Customer ID format is invalid. Expected format: C-001</span>');
+        }
+    }
+
+    function validateCustomerNic() {
+        $('.error-nic').remove(); // Clear previous error messages
+        const nic = $('#cus_nic').val().trim();
+        if (nic === '') {
+            $('#cus_nic').after('<span class="error text-danger error-nic">NIC is required</span>');
+        } else if (!/^\d{9}[Vv]$|^\d{12}$/.test(nic)) {
+            $('#cus_nic').after('<span class="error text-danger error-nic">NIC format is invalid</span>');
+        }
+    }
+
+    function validateCustomerName() {
+        $('.error-name').remove(); // Clear previous error messages
+        if ($('#cus_name').val().trim() === '') {
+            $('#cus_name').after('<span class="error text-danger error-name">Name is required</span>');
+        }
+    }
+
+    function validateCustomerPhoneNo() {
+        $('.error-phoneNo').remove(); // Clear previous error messages
+        const phoneNo = $('#cus_phoneNo').val().trim();
+        if (phoneNo === '') {
+            $('#cus_phoneNo').after('<span class="error text-danger error-phoneNo">Phone Number is required</span>');
+        } else if (!/^\d{10}$/.test(phoneNo)) {
+            $('#cus_phoneNo').after('<span class="error text-danger error-phoneNo">Phone Number format is invalid</span>');
+        }
+    }
+
+    // Bind the input event to trigger validation in real-time
+    $('#cus_id').on('input', validateCustomerId);
+    $('#cus_nic').on('input', validateCustomerNic);
+    $('#cus_name').on('input', validateCustomerName);
+    $('#cus_phoneNo').on('input', validateCustomerPhoneNo);
+
     /* Search a customer from table */
     $('#customer-table-tbody').on('click', 'tr', function (){
         let index = $(this).index();
@@ -41,16 +130,22 @@ $(document).ready(function () {
 
     /* save customer */
     $('#cus_save_btn').on('click', () =>{
-        var cus_id = $('#cus_id').val();
-        var cus_nic = $('#cus_nic').val();
-        var cus_name = $('#cus_name').val();
-        var cus_phoneNo = $('#cus_phoneNo').val();
+        let isvalid =  validateCustomerFields();
+        if(isvalid) {
+            var cus_id = generateNextCustomerId();
+            var cus_nic = $('#cus_nic').val();
+            var cus_name = $('#cus_name').val();
+            var cus_phoneNo = $('#cus_phoneNo').val();
 
-        var customer = new CustomerModel(cus_id, cus_nic, cus_name, cus_phoneNo);
+            var customer = new CustomerModel(cus_id, cus_nic, cus_name, cus_phoneNo);
 
-        customers.push(customer);
-        loadTable();
-        clear();
+            customers.push(customer);
+            loadTable();
+            clear();
+        } else {
+            console.log("invalid fields.")
+        }
+
     });
 
     /* update customer */
@@ -87,6 +182,7 @@ $(document).ready(function () {
         $('#cus_nic').val('');
         $('#cus_name').val('');
         $('#cus_phoneNo').val('');
+        $('.error').remove();
     }
 
     /* Load All Customers */

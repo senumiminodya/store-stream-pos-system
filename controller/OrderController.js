@@ -11,7 +11,7 @@ function initialize() {
 }
 
 /* search customer by id */
-$('#customer-id').on('keydown', () => {
+$('#customer-id').on('input', () => {
     console.log("entered");
     let customer_id = $('#customer-id').val();
     let customerFound = false; // Flag to track if customer is found
@@ -34,7 +34,7 @@ $('#customer-id').on('keydown', () => {
 });
 
 /* search item by id */
-$('#item-code').on('keydown', ()=>{
+$('#item-code').on('input', ()=>{
     console.log("entered");
     let item_code = $('#item-code').val();
     let itemFound = false;
@@ -53,7 +53,6 @@ $('#item-code').on('keydown', ()=>{
         }
     }
     if (!itemFound) {
-        $('#item-code').val('');
         $('#item-name').val('');
         $('#price').val('');
         $('#qty-on-hand').val('');
