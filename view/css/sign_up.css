@@ -1,31 +1,9 @@
-.header {
-    background-color: #FBF6EE;
+.sign-up-section {
     position: relative;
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    height: 8vh; /* Example height, adjust as needed */
+    width: 100vw;
+    height: calc(100vh - 90px);
 }
-.header img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 85px;
-    width: 157px;
-}
-.header p {
-    text-align: center;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #65B741;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
-.section {
-    position: relative;
-}
-.cube{
+.signup-cube{
     background-color: #FBF6EE;
     width: 40vw;
     height: 80vh;
@@ -34,11 +12,13 @@
     box-shadow: 0 5px 25px 1px black;
     /*position: relative;*/
     position: absolute;
-    left: 10px;
-    top: 10px;
-    margin: 30px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
-.cube::after{
+.signup-cube::after{
     content: '';
     max-width: 495px;
     width: 100%;
@@ -48,7 +28,7 @@
     position: absolute;
 }
 .image {
-    background-image: url("image.png");
+    background-image: url("../../assets/sign_up/image.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -63,13 +43,12 @@
     padding: 30px;
 }
 .signup_logo {
-    background-image: url("signup_simbol.png");
+    background-image: url("../../assets/sign_up/signup_simbol.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     width: 60px;
     height: 60px;
-    margin: 0 auto;
     margin-bottom: 30px;
 }
 .signup_logo, .signup {

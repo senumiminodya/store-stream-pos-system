@@ -1,31 +1,7 @@
-.header {
-    background-color: #FBF6EE;
-    position: relative;
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    height: 8vh; /* Example height, adjust as needed */
-}
-.header img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 85px;
-    width: 157px;
-}
-.header p {
-    text-align: center;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #65B741;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
 .section {
     position: relative;
 }
-.cube{
+.login-cube{
     background-color: #FBF6EE;
     width: 40vw;
     height: 80vh;
@@ -34,11 +10,13 @@
     box-shadow: 0 5px 25px 1px black;
     /*position: relative;*/
     position: absolute;
-    left: 10px;
-    top: 10px;
-    margin: 30px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
-.cube::after{
+.login-cube::after{
     content: '';
     max-width: 495px;
     width: 100%;
@@ -47,29 +25,16 @@
     bottom: 0;
     position: absolute;
 }
-.image {
-    background-image: url("large_img.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 50vw;
-    height: 90vh;
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: inline;
-}
 .form {
     padding: 30px;
 }
 .login_logo {
-    background-image: url("login_simbol.png");
+    background-image: url("../../assets/login/login_simbol.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     width: 60px;
     height: 60px;
-    margin: 0 auto;
     margin-bottom: 30px;
 }
 .login_logo, .signup {
@@ -97,7 +62,7 @@
     background-color: #D9D9D9;
 }
 .small-image {
-    background-image: url("small_img.png");
+    background-image: url("../../assets/login/small_img.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -105,3 +70,126 @@
     height: 300px;
     margin: auto;
 }
+/*body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-color: #FBF6EE;
+    display: flex;
+    justify-content: center; !* Horizontal centering *!
+    align-items: center; !* Vertical centering *!
+    height: 8vh; !* Example height, adjust as needed *!
+    position: relative;
+}
+
+.header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 85px;
+    width: 157px;
+}
+
+.header p {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #65B741;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 92vh; !* Fill the rest of the height *!
+}
+
+.cube {
+    background-color: #FBF6EE;
+    width: 100%;
+    max-width: 400px; !* Max width for responsiveness *!
+    border-radius: 15px;
+    box-shadow: 0 5px 25px 1px black;
+    padding: 30px;
+    margin: 20px;
+}
+
+.image {
+    background-image: url("../../assets/login/large_img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 20px;
+}
+
+.form {
+    padding: 30px;
+}
+
+.login_logo {
+    background-image: url("../../assets/login/login_simbol.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.login {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.text-field1 {
+    background-color: #D9D9D9;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.small-image {
+    background-image: url("../../assets/login/small_img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .section {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        flex-direction: column;
+    }
+
+    .image {
+        height: 200px;
+    }
+}
+
